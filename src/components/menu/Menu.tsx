@@ -1,7 +1,7 @@
 import "./menu.scss"
 const Menu = () => {
   return (
-    <div className="home">Menu</div>
+    <div className="menu">Menu</div>
   )
 }
 export default Menu;

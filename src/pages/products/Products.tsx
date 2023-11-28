@@ -1,7 +1,7 @@
 import "./products.scss"
 const Products = () => {
   return (
-    <div className="home">Products</div>
+    <div className="products">Products</div>
   )
 }
 export default Products;
