@@ -1,45 +1,56 @@
 .navbar {
-  width: 100%;
-  padding: 20px;
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  .logo {
+  flex-direction: column;
+  padding: 1em;
+
+  .topBlueCont {
+    background-color: #3aa8f0;
     display: flex;
+    justify-items: center;
     align-items: center;
-    font-weight: bold;
-    gap: 10px;
-  }
-  .icons {
-    display: flex;
-    gap: 20px;
-    .notification {
-        position: relative;
-      span {
-        background-color: red;
-        color: white;
-        width: 16px;
-        height: 16px;
-        border-radius: 50%;
-        position: absolute;
-        top: -10px;
-        right: -10px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 12px;
+    width: 100%;
+    padding-right: 1em;
+
+    .logoCont {
+      padding: 5px;
+      margin-right: 1em;
+      .logoImage {
+        width: 200px;
+        height: auto;
       }
     }
-    .user {
+    .topBlueCont_Menus {
+      width: 100%;
       display: flex;
-      align-items: center;
-      gap: 10px;
-      img {
-        width: 26px;
-        height: 26px;
-        border-radius: 50%;
-        object-fit: cover;
+      justify-content: space-between;
+
+      .topBlueCont_Menus_Icon {
+        width: 40px;
+        height: auto;
+        display: flex;
+        margin-top: 1em;
+        flex-direction: column;
+        justify-content: center;
       }
+    }
+  }
+
+  .yellowBottomCont {
+    background-color: #f89727;
+    padding: 1em 0em 1em 0em;
+    display: flex;
+    padding-left: 190px;
+    // width: 100%;
+
+    .yellowBottomCont_Menus {
+      display: flex;
+      width: 100%;
+      align-items: center;
+      justify-content: center;
+    }
+    .topBlueCont_Menus_Icon {
+      width: 40px;
+      height: auto;
     }
   }
 }

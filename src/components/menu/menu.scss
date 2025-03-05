@@ -1,27 +1,35 @@
-@import "../../styles/variables.scss";
+@use "../../styles/variables";
 
 .menu{
+
+    .logoContainer{
+        width: 100px;
+    margin-bottom: 2em;
+    margin-top: 1em;
+        .logoImage{
+            width: 100px;
+            height: auto;
+        }
+    }
+
    .item{
     display: flex;
     flex-direction: column;
     gap: 10px;
     margin-bottom: 20px;
-
-    .title{
-        font-size: 12px;
-        font-weight: 200;
-        color: $soft-color;
-    }
-
     .listItem{
         display: flex;
         align-items: center;
         gap: 10px;
         padding: 10px;
         border-radius: 5px;
+        background-color: #3aa8f0;
 
         &:hover{
-            background-color: $soft-bg;
+            background-color: variables.$soft-bg;
+        }
+        .listItemTitle{
+            font-size: 14px;
         }
     }
    }

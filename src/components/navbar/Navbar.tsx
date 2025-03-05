@@ -1,26 +1,38 @@
-import "./navbar.scss"
+import "./navbar.scss";
+import { navBarMenuItems } from "../../data";
+import { Link } from "react-router-dom";
 const Navbar = () => {
   return (
     <div className="navbar">
-      <div className="logo">
-        <img src="logo.svg" alt="Logo Image" />
-        <span>MattaAdmin</span>
+      <div className="topBlueCont">
+        <div className="logoCont">
+          <img src="/images/Pos_Logo_white.png" alt="" className="logoImage" />
+        </div>
+        <div className="topBlueCont_Menus">
+          {navBarMenuItems.map((item) => {
+            return (
+              <div>
+                <Link to={item.ur1} key={item.id}>
+                  <span>{item.title}</span>
+                  {/* <img src={item.image} alt="" className="topBlueCont_Menus_Icon" /> */}
+                </Link>
+              </div>
+            );
+          })}
+        </div>
       </div>
-      <div className="icons">
-        <img src="/search.svg" alt="" className="icon" />
-        <img src="/app.svg" alt="" className="icon" />
-        <img src="/expand.svg" alt="" className="icon" />
-        <div className="notification">
-          <img src="/notifications.svg" alt="" />
-          <span>1</span>
-        </div>
-        <div className="user">
-          <img src="/sample-one.jpeg" alt="" />
-          <span>Giddy</span>
-        </div>
-        <img src="/settings.svg" alt="" className="icon" />
+      <div className="yellowBottomCont">
+      {navBarMenuItems.map((item) => {
+            return (
+              <div className="yellowBottomCont_Menus">
+                <Link to="" key={item.id}>
+                  <img src={item.image} alt="" className="topBlueCont_Menus_Icon" />
+                </Link>
+              </div>
+            );
+          })}
       </div>
     </div>
-  )
-}
+  );
+};
 export default Navbar;

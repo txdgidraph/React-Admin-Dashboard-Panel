@@ -5,18 +5,19 @@ import { menu } from "../../data";
 const Menu = () => {
   return (
     <div className="menu">
-      {menu.map((item) => (
-        <div className="item" key={item.id}>
-          <span className="title">{item.title}</span>
-
-          {item.listItems.map((listItem) => (
-            <Link to={listItem.ur1} className="listItem" key={listItem.id}>
-              <img src={listItem.icon} alt="" />
-              <span className="listItemTitle">{listItem.title}</span>
+      {/* <div className="logoContainer">
+        <img src="/images/Pos_Logo_white.png" alt="" className="logoImage"/>
+      </div> */}
+      {menu.map((item) => {
+        return (
+          <div className="item" key={item.id}>
+            <Link to={item.ur1} className="listItem" key={item.id}>
+              {/* <img src={item.icon} alt="" /> */}
+              <span className="listItemTitle">{item.title}</span>
             </Link>
-          ))}
-        </div>
-      ))}
+          </div>
+        );
+      })}
     </div>
   );
 };
