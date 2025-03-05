@@ -8,6 +8,7 @@ import Menu from "./components/menu/Menu";
 import Login from "./pages/login/Login";
 import "./styles/global.scss"
 import Customers from "./components/customers/Customers";
+import Items from "./components/items/Items";
 
 function App() {
   const Layout = () => {
@@ -47,6 +48,10 @@ function App() {
         {
           path: "/customers",
           element: <Customers />,
+        },
+        {
+          path: "/items",
+          element: <Items />,
         },
       ],
     },

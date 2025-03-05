@@ -2,6 +2,8 @@ import "./customers.scss";
 
 import { DataGrid } from "@mui/x-data-grid";
 import { existingCustomers } from "../../data";
+import Button from "@mui/material/Button";
+import Stack from "@mui/material/Stack";
 
 const Customers = () => {
   const columns = [
@@ -14,13 +16,65 @@ const Customers = () => {
   ];
 
   return (
-    <div style={{ height: 500, width: "100%" }}>
-      <DataGrid
-        rows={existingCustomers} // Use the customer data
-        columns={columns}
-        checkboxSelection
-        disableRowSelectionOnClick
-      />
+    <div>
+      <div className="buttonsContainer">
+        <div className="deleteMailBtnCont">
+          <Stack spacing={2} direction="row">
+            <Button
+              variant="contained"
+              sx={{
+                backgroundColor: "#6E6F6E",
+                color: "white",
+                "&:hover": { backgroundColor: "darkgray" },
+              }}
+            >
+              DELETE
+            </Button>
+            <Button
+              variant="contained"
+              sx={{
+                backgroundColor: "#6E6F6E",
+                color: "white",
+                "&:hover": { backgroundColor: "darkgray" },
+              }}
+            >
+              SEND MAIL
+            </Button>
+          </Stack>
+        </div>
+        <div className="deleteMailBtnCont">
+          <Stack spacing={2} direction="row">
+            <Button
+              variant="contained"
+              sx={{
+                backgroundColor: "#9955BA",
+                color: "white",
+                "&:hover": { backgroundColor: "darkgray" },
+              }}
+            >
+              NEW CUSTOMER
+            </Button>
+            <Button
+              variant="contained"
+              sx={{
+                backgroundColor: "#9955BA",
+                color: "white",
+                "&:hover": { backgroundColor: "darkgray" },
+              }}
+            >
+              SEND MAIL
+            </Button>
+          </Stack>
+        </div>
+      </div>
+      <div style={{ height: "500px", width: "100%" }}>
+        <DataGrid
+          rows={existingCustomers} // Use the customer data
+          columns={columns}
+          checkboxSelection
+          disableRowSelectionOnClick
+        />
+      </div>
     </div>
   );
 };
