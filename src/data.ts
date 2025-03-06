@@ -234,9 +234,7 @@ export const itemInStock = [
     quantity: 15,
     taxPercent: 16,
     avatar: "/images/POS.png",
-    update_inventory:"",
-    inventory_count_items:"",
-    update_item:""
+    itemSettings:"settings.svg"
   },
   {
     id: 2,
@@ -249,9 +247,7 @@ export const itemInStock = [
     quantity: 30,
     taxPercent: 10,
     avatar: "/images/POS.png",
-    update_inventory:"",
-    inventory_count_items:"",
-    update_item:""
+    itemSettings:"settings.svg"
   },
   {
     id: 3,
@@ -264,9 +260,7 @@ export const itemInStock = [
     quantity: 10,
     taxPercent: 16,
     avatar: "/images/POS.png",
-    update_inventory:"",
-    inventory_count_items:"",
-    update_item:""
+    itemSettings:"settings.svg"
   },
   {
     id: 4,
@@ -279,9 +273,7 @@ export const itemInStock = [
     quantity: 50,
     taxPercent: 8,
     avatar: "/images/POS.png",
-    update_inventory:"",
-    inventory_count_items:"",
-    update_item:""
+    itemSettings:"settings.svg"
   },
   {
     id: 5,
@@ -294,9 +286,7 @@ export const itemInStock = [
     quantity: 25,
     taxPercent: 16,
     avatar: "/images/POS.png",
-    update_inventory:"",
-    inventory_count_items:"",
-    update_item:""
+    itemSettings:"settings.svg"
   },
   {
     id: 6,
@@ -309,9 +299,7 @@ export const itemInStock = [
     quantity: 20,
     taxPercent: 16,
     avatar: "/images/POS.png",
-    update_inventory:"",
-    inventory_count_items:"",
-    update_item:""
+    itemSettings:"settings.svg"
   },
   {
     id: 7,
@@ -324,9 +312,7 @@ export const itemInStock = [
     quantity: 8,
     taxPercent: 14,
     avatar: "/images/POS.png",
-    update_inventory:"",
-    inventory_count_items:"",
-    update_item:""
+    itemSettings:"settings.svg"
   },
   {
     id: 8,
@@ -339,9 +325,7 @@ export const itemInStock = [
     quantity: 12,
     taxPercent: 14,
     avatar: "/images/POS.png",
-    update_inventory:"",
-    inventory_count_items:"",
-    update_item:""
+    itemSettings:"settings.svg"
   },
   {
     id: 9,
@@ -354,9 +338,7 @@ export const itemInStock = [
     quantity: 18,
     taxPercent: 12,
     avatar: "/images/POS.png",
-    update_inventory:"",
-    inventory_count_items:"",
-    update_item:""
+    itemSettings:"settings.svg"
   },
   {
     id: 10,
@@ -369,8 +351,6 @@ export const itemInStock = [
     quantity: 10,
     taxPercent: 16,
     avatar: "/images/POS.png",
-    update_inventory:"",
-    inventory_count_items:"",
-    update_item:""
+    itemSettings:"settings.svg"
   },
 ];
