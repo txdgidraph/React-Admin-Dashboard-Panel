@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import "./stock.scss";
 import { Link } from "react-router-dom";
 import AddModifyStock from "../stock_settings/add_modify_stock/Add_modify_stock";

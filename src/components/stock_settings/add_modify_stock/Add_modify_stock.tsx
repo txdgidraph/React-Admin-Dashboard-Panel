@@ -1,4 +1,3 @@
-import React from "react";
 import Button from "@mui/material/Button";
 import TextField from "@mui/material/TextField";
 import Dialog from "@mui/material/Dialog";
@@ -6,11 +5,16 @@ import DialogActions from "@mui/material/DialogActions";
 import DialogContent from "@mui/material/DialogContent";
 import DialogTitle from "@mui/material/DialogTitle";
 
-const AddModifyStock = ({ open, setOpen }) => {
-  const handleClose = () => {
-    setOpen(false);
-  };
-
+// Define props type
+interface AddModifyStockProps {
+    open: boolean;
+    setOpen: React.Dispatch<React.SetStateAction<boolean>>;
+  }
+  
+  const AddModifyStock: React.FC<AddModifyStockProps> = ({ open, setOpen }) => {
+    const handleClose = () => {
+      setOpen(false);
+    };
   return (
     <Dialog open={open} onClose={handleClose}>
       <DialogTitle>Add / Modify Stock</DialogTitle>
