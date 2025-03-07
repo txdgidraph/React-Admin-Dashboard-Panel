@@ -9,6 +9,7 @@ import Login from "./pages/login/Login";
 import "./styles/global.scss"
 import Customers from "./components/customers/Customers";
 import Items from "./components/items/Items";
+import Stock from "./components/stock/Stock";
 
 function App() {
   const Layout = () => {
@@ -52,6 +53,10 @@ function App() {
         {
           path: "/items",
           element: <Items />,
+        },
+        {
+          path: "/stock",
+          element: <Stock />,
         },
       ],
     },

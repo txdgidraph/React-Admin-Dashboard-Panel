@@ -4,6 +4,7 @@ import { GridRenderCellParams } from "@mui/x-data-grid";
 import { Button, Stack } from "@mui/material";
 import { useState } from "react";
 import AddNewItem from "../add_new_item/AddNewItem";
+import { Link } from "react-router-dom";
 
 const Items = () => {
     const [open, setOpen] = useState(false);
@@ -13,8 +14,8 @@ const Items = () => {
     { field: "itemName", headerName: "Item Name", width: 130 },
     { field: "category", headerName: "Category" },
     { field: "companyName", headerName: "Comapny Name", width: 130 },
-    { field: "costPrice", headerName: "Cost Price" },
-    { field: "sellPrice", headerName: "Sell Price" },
+    { field: "WholesalePrice", headerName: "Wholesale Price", width:130},
+    { field: "RetailPrice", headerName: "Retail Price" },
     { field: "quantity", headerName: "Quantity" },
     { field: "taxPercent", headerName: "Tax %", width: 60 },
     {
@@ -28,9 +29,18 @@ const Items = () => {
       field: "itemSettings",
       headerName: "",
       renderCell: (params: GridRenderCellParams) => (
-        <img src={params.value} alt="Item Avatar" width={20} height={20} />
+        <Link to="">
+        <img
+          src={params.value}
+          alt="Item Avatar"
+          width={20}
+          height={20}
+          style={{ filter: "grayscale(100%) contrast(0)" }} 
+        />
+        </Link>
       ),
     },
+    
   ];
   return (
     <div>
