@@ -73,61 +73,67 @@ export const navBarMenuItems = [
   {
     id: 1,
     title: "POS",
-    image:"/images/POS.png",
+    image: "/images/POS.png",
     ur1: "/",
   },
   {
     id: 1,
     title: "INVOICE",
-    image:"/images/invoice.png",
+    image: "/images/invoice.png",
     ur1: "/",
   },
   {
     id: 1,
     title: "CUSTOMERS",
-    image:"/images/customer.png",
+    image: "/images/customer.png",
     ur1: "/customers",
   },
   {
     id: 1,
     title: "SUPPLIERS",
-    image:"/images/supplier.png",
-    ur1: "/",
+    image: "/images/supplier.png",
+    ur1: "/suppliers",
   },
   {
     id: 1,
     title: "STOCK",
-    image:"/images/stock.png",
+    image: "/images/stock.png",
     ur1: "/stock",
   },
   {
     id: 1,
     title: "ACCOUNTS",
-    image:"/images/account.png",
+    image: "/images/account.png",
     ur1: "/",
   },
-  {
+  // {
+  //   id: 1,
+  //   title: "EMPLOYEE",
+  //   image: "/images/employee.png",
+  //   ur1: "/",
+  // },
+  // {
+  //   id: 1,
+  //   title: "PAYROLL",
+  //   image: "/images/payroll.png",
+  //   ur1: "/",
+  // },
+   {
     id: 1,
-    title: "EMPLOYEE",
-    image:"/images/employee.png",
-    ur1: "/",
-  },
-  {
-    id: 1,
-    title: "PAYROLL",
-    image:"/images/payroll.png",
-    ur1: "/",
+    title: "OFFICE",
+    image: "/images/employee.png",
+    ur1: "/office",
   },
   {
     id: 1,
     title: "REPORTS",
-    image:"/images/stock.png",
+    image: "/images/stock.png",
     ur1: "/",
   },
   {
     id: 1,
     title: "HELP",
-    image:"/images/customer.png",
+    image: "/images/customer.png",
     ur1: "/",
   },
 ];
@@ -139,7 +145,8 @@ export const existingCustomers = [
     firstName: "James",
     email: "james.mwangi@example.com",
     phoneNumber: "+254712345678",
-    totalSpent: "Ksh 45,000"
+    totalSpent: "Ksh 45,000",
+    customerSettings: "/images/edit_icon.png",
   },
   {
     id: 2,
@@ -147,7 +154,8 @@ export const existingCustomers = [
     firstName: "Grace",
     email: "grace.achieng@example.com",
     phoneNumber: "+254723456789",
-    totalSpent: "Ksh 32,500"
+    totalSpent: "Ksh 32,500",
+    customerSettings: "/images/edit_icon.png",
   },
   {
     id: 3,
@@ -155,7 +163,8 @@ export const existingCustomers = [
     firstName: "Peter",
     email: "peter.kamau@example.com",
     phoneNumber: "+254734567890",
-    totalSpent: "Ksh 78,200"
+    totalSpent: "Ksh 78,200",
+    customerSettings: "/images/edit_icon.png",
   },
   {
     id: 4,
@@ -163,7 +172,8 @@ export const existingCustomers = [
     firstName: "John",
     email: "john.otieno@example.com",
     phoneNumber: "+254745678901",
-    totalSpent: "Ksh 21,000"
+    totalSpent: "Ksh 21,000",
+    customerSettings: "/images/edit_icon.png",
   },
   {
     id: 5,
@@ -171,7 +181,8 @@ export const existingCustomers = [
     firstName: "Mary",
     email: "mary.wambui@example.com",
     phoneNumber: "+254756789012",
-    totalSpent: "Ksh 55,600"
+    totalSpent: "Ksh 55,600",
+    customerSettings: "/images/edit_icon.png",
   },
   {
     id: 6,
@@ -179,7 +190,8 @@ export const existingCustomers = [
     firstName: "Samuel",
     email: "samuel.kariuki@example.com",
     phoneNumber: "+254767890123",
-    totalSpent: "Ksh 37,800"
+    totalSpent: "Ksh 37,800",
+    customerSettings: "/images/edit_icon.png",
   },
   {
     id: 7,
@@ -187,7 +199,8 @@ export const existingCustomers = [
     firstName: "Lucy",
     email: "lucy.njeri@example.com",
     phoneNumber: "+254778901234",
-    totalSpent: "Ksh 92,300"
+    totalSpent: "Ksh 92,300",
+    customerSettings: "/images/edit_icon.png",
   },
   {
     id: 8,
@@ -195,7 +208,8 @@ export const existingCustomers = [
     firstName: "Kevin",
     email: "kevin.mutua@example.com",
     phoneNumber: "+254789012345",
-    totalSpent: "Ksh 41,900"
+    totalSpent: "Ksh 41,900",
+    customerSettings: "/images/edit_icon.png",
   },
   {
     id: 9,
@@ -204,9 +218,10 @@ export const existingCustomers = [
     email: "daniel.wafula@example.com",
     phoneNumber: "+254790123456",
     totalSpent: "Ksh 64,500",
-    update_inventory:"",
-    inventory_count_items:"",
-    update_item:""
+    update_inventory: "",
+    inventory_count_items: "",
+    update_item: "",
+    customerSettings: "/images/edit_icon.png",
   },
   {
     id: 10,
@@ -215,12 +230,12 @@ export const existingCustomers = [
     email: "ann.chebet@example.com",
     phoneNumber: "+254701234567",
     totalSpent: "Ksh 29,750",
-    update_inventory:"",
-    inventory_count_items:"",
-    update_item:""
-  }
+    update_inventory: "",
+    inventory_count_items: "",
+    update_item: "",
+    customerSettings: "/images/edit_icon.png",
+  },
 ];
-
 
 export const itemInStock = [
   {
@@ -234,7 +249,7 @@ export const itemInStock = [
     quantity: 15,
     taxPercent: 16,
     avatar: "/images/POS.png",
-    itemSettings:"settings.svg"
+    itemSettings: "/images/edit_icon.png",
   },
   {
     id: 2,
@@ -247,7 +262,7 @@ export const itemInStock = [
     quantity: 30,
     taxPercent: 10,
     avatar: "/images/POS.png",
-    itemSettings:"settings.svg"
+    itemSettings: "/images/edit_icon.png",
   },
   {
     id: 3,
@@ -260,7 +275,7 @@ export const itemInStock = [
     quantity: 10,
     taxPercent: 16,
     avatar: "/images/POS.png",
-    itemSettings:"settings.svg"
+    itemSettings: "/images/edit_icon.png",
   },
   {
     id: 4,
@@ -273,7 +288,7 @@ export const itemInStock = [
     quantity: 50,
     taxPercent: 8,
     avatar: "/images/POS.png",
-    itemSettings:"settings.svg"
+    itemSettings: "/images/edit_icon.png",
   },
   {
     id: 5,
@@ -286,7 +301,7 @@ export const itemInStock = [
     quantity: 25,
     taxPercent: 16,
     avatar: "/images/POS.png",
-    itemSettings:"settings.svg"
+    itemSettings: "/images/edit_icon.png",
   },
   {
     id: 6,
@@ -299,7 +314,7 @@ export const itemInStock = [
     quantity: 20,
     taxPercent: 16,
     avatar: "/images/POS.png",
-    itemSettings:"settings.svg"
+    itemSettings: "/images/edit_icon.png",
   },
   {
     id: 7,
@@ -312,7 +327,7 @@ export const itemInStock = [
     quantity: 8,
     taxPercent: 14,
     avatar: "/images/POS.png",
-    itemSettings:"settings.svg"
+    itemSettings: "/images/edit_icon.png",
   },
   {
     id: 8,
@@ -325,7 +340,7 @@ export const itemInStock = [
     quantity: 12,
     taxPercent: 14,
     avatar: "/images/POS.png",
-    itemSettings:"settings.svg"
+    itemSettings: "/images/edit_icon.png",
   },
   {
     id: 9,
@@ -338,7 +353,7 @@ export const itemInStock = [
     quantity: 18,
     taxPercent: 12,
     avatar: "/images/POS.png",
-    itemSettings:"settings.svg"
+    itemSettings: "/images/edit_icon.png",
   },
   {
     id: 10,
@@ -351,6 +366,119 @@ export const itemInStock = [
     quantity: 10,
     taxPercent: 16,
     avatar: "/images/POS.png",
-    itemSettings:"settings.svg"
+    itemSettings: "/images/edit_icon.png",
+  },
+];
+
+export const suppliersList = [
+  {
+    id: "1",
+    companyName: "Safaricom",
+    agencyName: "JMW Agency",
+    category: "Cereals",
+    lastName: "Mwangi",
+    firstName: "John",
+    email: "johnmwangi@gmail.com",
+    phoneNumber: "+254718551397",
+    supplierSettings: "/images/edit_icon.png",
+  },
+  {
+    id: "2",
+    companyName: "Bidco Africa",
+    agencyName: "Kibo Distributors",
+    category: "Edible Oils",
+    lastName: "Odhiambo",
+    firstName: "Kevin",
+    email: "kevin.odhiambo@bidco.com",
+    phoneNumber: "+254722334455",
+    supplierSettings: "/images/edit_icon.png",
+  },
+  {
+    id: "3",
+    companyName: "Brookside Dairy",
+    agencyName: "Lactose Suppliers",
+    category: "Dairy Products",
+    lastName: "Kamau",
+    firstName: "Grace",
+    email: "grace.kamau@brookside.co.ke",
+    phoneNumber: "+254734556677",
+    supplierSettings: "/images/edit_icon.png",
+  },
+  {
+    id: "4",
+    companyName: "Kenya Breweries Ltd",
+    agencyName: "ABC Beverages",
+    category: "Alcoholic Drinks",
+    lastName: "Mutua",
+    firstName: "Brian",
+    email: "brian.mutua@kbl.co.ke",
+    phoneNumber: "+254700123456",
+    supplierSettings: "/images/edit_icon.png",
+  },
+  {
+    id: "5",
+    companyName: "Mumias Sugar",
+    agencyName: "Sweet Distributors",
+    category: "Sugar",
+    lastName: "Wanjiru",
+    firstName: "Mercy",
+    email: "mercy.wanjiru@mumias.co.ke",
+    phoneNumber: "+254725667788",
+    supplierSettings: "/images/edit_icon.png",
+  },
+  {
+    id: "6",
+    companyName: "Unilever Kenya",
+    agencyName: "Sunlight Agencies",
+    category: "Household Goods",
+    lastName: "Otieno",
+    firstName: "James",
+    email: "james.otieno@unilever.co.ke",
+    phoneNumber: "+254710987654",
+    supplierSettings: "/images/edit_icon.png",
+  },
+  {
+    id: "7",
+    companyName: "Unga Limited",
+    agencyName: "Maize Flour Suppliers",
+    category: "Flour & Grains",
+    lastName: "Kariuki",
+    firstName: "Catherine",
+    email: "catherine.kariuki@unga.co.ke",
+    phoneNumber: "+254722556677",
+    supplierSettings: "/images/edit_icon.png",
+  },
+  {
+    id: "8",
+    companyName: "Coca-Cola Beverages Africa",
+    agencyName: "Refresh Distributors",
+    category: "Soft Drinks",
+    lastName: "Ndungu",
+    firstName: "David",
+    email: "david.ndungu@ccba.co.ke",
+    phoneNumber: "+254715998877",
+    supplierSettings: "/images/edit_icon.png",
+  },
+  {
+    id: "9",
+    companyName: "Kenya Power",
+    agencyName: "Energy Supply Ltd",
+    category: "Utilities",
+    lastName: "Obiero",
+    firstName: "Sarah",
+    email: "sarah.obiero@kplc.co.ke",
+    phoneNumber: "+254733445566",
+    supplierSettings: "/images/edit_icon.png",
+  },
+  {
+    id: "10",
+    companyName: "Bata Kenya",
+    agencyName: "Footwear Distributors",
+    category: "Footwear",
+    lastName: "Kimani",
+    firstName: "Peter",
+    email: "peter.kimani@bata.co.ke",
+    phoneNumber: "+254720667788",
+    supplierSettings: "/images/edit_icon.png",
   },
 ];

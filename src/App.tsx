@@ -6,10 +6,13 @@ import Navbar from "./components/navbar/Navbar";
 import Footer from "./components/footer/Footer";
 import Menu from "./components/menu/Menu";
 import Login from "./pages/login/Login";
-import "./styles/global.scss"
+import "./styles/global.scss";
 import Customers from "./components/customers/Customers";
 import Items from "./components/items/Items";
 import Stock from "./components/stock/Stock";
+import Suppliers from "./components/suppliers/Suppliers";
+import Office from "./components/office/Office";
+import Employee from "./components/employee/Employee";
 
 function App() {
   const Layout = () => {
@@ -58,12 +61,24 @@ function App() {
           path: "/stock",
           element: <Stock />,
         },
+        {
+          path: "/suppliers",
+          element: <Suppliers />,
+        },
+        {
+          path: "/office",
+          element: <Office />,
+        },
+        {
+          path: "/office/employee",
+          element: <Employee />,
+        },
       ],
     },
     {
-      path:"/login",
-      element:<Login/>
-    }
+      path: "/login",
+      element: <Login />,
+    },
   ]);
 
   return <RouterProvider router={router} />;

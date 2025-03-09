@@ -12,7 +12,7 @@ const Navbar = () => {
           {navBarMenuItems.map((item) => {
             return (
               <div>
-                <Link to={item.ur1} key={item.id}>
+                <Link to={item.ur1} key={item.id} className="menuTitle">
                   <span>{item.title}</span>
                   {/* <img src={item.image} alt="" className="topBlueCont_Menus_Icon" /> */}
                 </Link>

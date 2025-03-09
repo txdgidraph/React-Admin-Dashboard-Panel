@@ -23,6 +23,12 @@
       width: 100%;
       display: flex;
       justify-content: space-between;
+      font-weight: 700;
+      font-size: 15px;
+
+      .menuTitle:hover{
+        text-decoration: underline;
+      }
 
       .topBlueCont_Menus_Icon {
         width: 40px;

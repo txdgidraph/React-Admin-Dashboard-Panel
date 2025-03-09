@@ -1,57 +1,47 @@
 import { DataGrid } from "@mui/x-data-grid";
-import { itemInStock } from "../../data";
+import { suppliersList } from "../../data";
 import { GridRenderCellParams } from "@mui/x-data-grid";
 import { Button, Stack } from "@mui/material";
 import { useState } from "react";
-import AddNewItem from "../add_new_item/AddNewItem";
 import { Link } from "react-router-dom";
+import NewSupplier from "./NewSupplier";
 
-const Items = () => {
+const Suppliers = () => {
   const [open, setOpen] = useState(false);
   const columns = [
     { field: "id", headerName: "ID", width: 50 },
-    { field: "barcode", headerName: "Barcode", width: 100 },
-    { field: "itemName", headerName: "Item Name", width: 130 },
+    { field: "companyName", headerName: "Company Name", width: 100 },
+    { field: "agencyName", headerName: "Agency Name", width: 130 },
     { field: "category", headerName: "Category" },
-    { field: "companyName", headerName: "Comapny Name", width: 130 },
-    { field: "WholesalePrice", headerName: "Wholesale Price", width: 130 },
-    { field: "RetailPrice", headerName: "Retail Price" },
-    { field: "quantity", headerName: "Quantity" },
-    { field: "taxPercent", headerName: "Tax %", width: 60 },
+    { field: "firstName", headerName: "First Name", width: 130 },
+    { field: "lastName", headerName: "Last Name", width: 130 },
+    { field: "email", headerName: "Email", width:170 },
+    { field: "phoneNumber", headerName: "Phone No", width: 130 },
     {
-      field: "avatar",
-      headerName: "Avatar",
-      renderCell: (params: GridRenderCellParams) => (
-        <img src={params.value} alt="Item Avatar" width={20} height={20} />
-      ),
-    },
-    {
-      field: "itemSettings",
-      headerName: "",
-      renderCell: (params: GridRenderCellParams) => (
-        <Link
-          to=""
-          style={{
-            display: "flex",
-            height: "100%",
-            width: "100%",
-            alignItems: "center", // Center vertically
-            justifyContent: "center", // Center horizontally
-
-          }}
-        >
-          <img
-            src={params.value}
-            alt="Item Avatar"
-            width={20}
-            height={20}
+        field: "supplierSettings",
+        headerName: "",
+        renderCell: (params: GridRenderCellParams) => (
+          <Link
+            to=""
             style={{
-              filter: "grayscale(100%) contrast(0)",
+              display: "flex",
+              alignItems: "center", // Center vertically
+              justifyContent: "center", // Center horizontally
+              height: "100%", // Ensure it fills the row height
+              width: "100%", // Ensure full width
             }}
-          />
-        </Link>
-      ),
-    },
+          >
+            <img
+              src={params.value}
+              alt="Edit Icon"
+              width={20}
+              height={20}
+              style={{ filter: "grayscale(100%) contrast(0)" }}
+            />
+          </Link>
+        ),
+      }
+      
   ];
 
   return (
@@ -83,7 +73,7 @@ const Items = () => {
                 "&:hover": { backgroundColor: "darkgray" },
               }}
             >
-              GENERATE BARCODE
+              EMAIL
             </Button>
           </Stack>
         </div>
@@ -101,7 +91,7 @@ const Items = () => {
                 "&:hover": { backgroundColor: "darkgray" },
               }}
             >
-              NEW ITEM
+              NEW SUPPLIER
             </Button>
             <Button
               variant="contained"
@@ -120,11 +110,11 @@ const Items = () => {
         </div>
       </div>
       {/* Pass open state and setOpen function as props */}
-      <AddNewItem open={open} setOpen={setOpen} />
+      <NewSupplier open={open} setOpen={setOpen} />
       <div style={{ maxWidth: "100%", overflow: "auto", padding: "1em" }}>
         <div style={{ height: "500px" }}>
           <DataGrid
-            rows={itemInStock} // Use the items data
+            rows={suppliersList} // Use the items data
             columns={columns}
             checkboxSelection
             disableRowSelectionOnClick
@@ -147,4 +137,4 @@ const Items = () => {
   );
 };
 
-export default Items;
+export default Suppliers;
