@@ -12,7 +12,7 @@ const Items = () => {
   const [filteredItems, setFilteredItems] = useState(itemInStock);
 
   // Function to handle search input
-  const handleSearch = (event) => {
+  const handleSearch = (event: any) => {
     const query = event.target.value.toLowerCase();
     setSearchQuery(query);
 
