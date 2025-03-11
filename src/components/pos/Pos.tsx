@@ -1,6 +1,6 @@
 import { useState } from "react";
-import { DataGrid, GridRenderCellParams, GridValueGetter } from "@mui/x-data-grid";
-import { Button, TextField, Stack, Typography, Paper } from "@mui/material";
+import { DataGrid, GridRenderCellParams } from "@mui/x-data-grid";
+import { Button, TextField, Typography, Paper } from "@mui/material";
 
 // Sample items (this will be updated when scanning)
 const sampleItems = [
@@ -101,7 +101,7 @@ const PointOfSaleScreen = () => {
         field: "total",
         headerName: "Total",
         width: 100,
-        valueGetter: (params) => {
+        valueGetter: (params: GridRenderCellParams) => {
           if (!params || !params.row) return 0; // Ensure params and row exist
           const price = params.row.price || 0;
           const quantity = params.row.quantity || 0;
