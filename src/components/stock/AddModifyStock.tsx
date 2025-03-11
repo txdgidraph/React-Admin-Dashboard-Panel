@@ -1,26 +1,31 @@
 import Button from "@mui/material/Button";
 import TextField from "@mui/material/TextField";
-import Dialog from "@mui/material/Dialog";
-import DialogActions from "@mui/material/DialogActions";
-import DialogContent from "@mui/material/DialogContent";
-import DialogTitle from "@mui/material/DialogTitle";
 import { useState } from "react";
 import "./add_modify_stock.scss";
 import { DataGrid, GridRenderCellParams } from "@mui/x-data-grid";
-import { Link } from "react-router-dom";
-import { itemInStock } from "../../../data";
+import { Link, useNavigate } from "react-router-dom";
+import { itemInStock } from "../../data";
 import { Stack } from "@mui/material";
 
-// Define props type
-interface AddModifyStockProps {
-  open: boolean;
-  setOpen: React.Dispatch<React.SetStateAction<boolean>>;
-}
-
-const AddModifyStock: React.FC<AddModifyStockProps> = ({ open, setOpen }) => {
+const AddModifyStock = () => {
   const [modifyStock, setModifyStock] = useState(false);
-  const handleClose = () => {
-    setOpen(false);
+
+  const navigate = useNavigate();
+
+  const [searchQuery, setSearchQuery] = useState("");
+  const [filteredItems, setFilteredItems] = useState(itemInStock);
+
+  // Function to handle search input
+  const handleSearch = (event) => {
+    const query = event.target.value.toLowerCase();
+    setSearchQuery(query);
+
+    // Filter items based on the search query
+    const filtered = itemInStock.filter((item) =>
+      item.itemName.toLowerCase().includes(query)
+    );
+
+    setFilteredItems(filtered);
   };
 
   const columns = [
@@ -58,116 +63,115 @@ const AddModifyStock: React.FC<AddModifyStockProps> = ({ open, setOpen }) => {
   ];
 
   return (
-    <Dialog open={open} onClose={handleClose} fullWidth maxWidth="lg">
+    <div>
       <div className="stockButtons">
-        <Button variant="contained" onClick={() => setModifyStock(false)}>
+        <Button className="ams_backButton" size="small"  onClick={() => navigate(-1)}>
+          <img src="/images/back-button.png" alt="" className="backIcon" />
+          <span>Go Back</span>
+        </Button>
+        <Button variant="contained" size="small" onClick={() => setModifyStock(false)}>
           Add Stock
         </Button>
-        <Button variant="contained" onClick={() => setModifyStock(true)}>
+        <Button variant="contained" size="small" onClick={() => setModifyStock(true)}>
           Modify Stock
         </Button>
       </div>
       {!modifyStock ? (
         <>
-          <DialogTitle>Add Stock</DialogTitle>
-          <DialogContent>
-            <TextField
-              autoFocus
-              required
-              margin="dense"
-              id="id"
-              name="id"
-              label="Stock ID"
-              type="text"
-              fullWidth
-              variant="outlined"
-            />
-            <TextField
-              required
-              margin="dense"
-              id="barcode"
-              name="barcode"
-              label="Barcode"
-              type="text"
-              fullWidth
-              variant="outlined"
-            />
-            <TextField
-              required
-              margin="dense"
-              id="itemName"
-              name="itemName"
-              label="Item Name"
-              type="text"
-              fullWidth
-              variant="outlined"
-            />
-            <TextField
-              required
-              margin="dense"
-              id="category"
-              name="category"
-              label="Category"
-              type="text"
-              fullWidth
-              variant="outlined"
-            />
-            <TextField
-              required
-              margin="dense"
-              id="companyName"
-              name="companyName"
-              label="Company Name"
-              type="text"
-              fullWidth
-              variant="outlined"
-            />
-            <TextField
-              required
-              margin="dense"
-              id="costPrice"
-              name="costPrice"
-              label="Cost Price"
-              type="number"
-              fullWidth
-              variant="outlined"
-            />
-            <TextField
-              required
-              margin="dense"
-              id="sellPrice"
-              name="sellPrice"
-              label="Sell Price"
-              type="number"
-              fullWidth
-              variant="outlined"
-            />
-            <TextField
-              required
-              margin="dense"
-              id="quantity"
-              name="quantity"
-              label="Quantity"
-              type="number"
-              fullWidth
-              variant="outlined"
-            />
-            <TextField
-              required
-              margin="dense"
-              id="tax"
-              name="tax"
-              label="Tax Percent"
-              type="number"
-              fullWidth
-              variant="outlined"
-            />
-          </DialogContent>
+          <TextField
+            autoFocus
+            required
+            margin="dense"
+            id="id"
+            name="id"
+            label="Stock ID"
+            type="text"
+            fullWidth
+            variant="outlined"
+          />
+          <TextField
+            required
+            margin="dense"
+            id="barcode"
+            name="barcode"
+            label="Barcode"
+            type="text"
+            fullWidth
+            variant="outlined"
+          />
+          <TextField
+            required
+            margin="dense"
+            id="itemName"
+            name="itemName"
+            label="Item Name"
+            type="text"
+            fullWidth
+            variant="outlined"
+          />
+          <TextField
+            required
+            margin="dense"
+            id="category"
+            name="category"
+            label="Category"
+            type="text"
+            fullWidth
+            variant="outlined"
+          />
+          <TextField
+            required
+            margin="dense"
+            id="companyName"
+            name="companyName"
+            label="Company Name"
+            type="text"
+            fullWidth
+            variant="outlined"
+          />
+          <TextField
+            required
+            margin="dense"
+            id="costPrice"
+            name="costPrice"
+            label="Cost Price"
+            type="number"
+            fullWidth
+            variant="outlined"
+          />
+          <TextField
+            required
+            margin="dense"
+            id="sellPrice"
+            name="sellPrice"
+            label="Sell Price"
+            type="number"
+            fullWidth
+            variant="outlined"
+          />
+          <TextField
+            required
+            margin="dense"
+            id="quantity"
+            name="quantity"
+            label="Quantity"
+            type="number"
+            fullWidth
+            variant="outlined"
+          />
+          <TextField
+            required
+            margin="dense"
+            id="tax"
+            name="tax"
+            label="Tax Percent"
+            type="number"
+            fullWidth
+            variant="outlined"
+          />
 
-          <DialogActions>
-            <Button onClick={handleClose}>Cancel</Button>
-            <Button type="submit">Save</Button>
-          </DialogActions>
+          <Button>Cancel</Button>
+          <Button type="submit">Save</Button>
         </>
       ) : (
         <div>
@@ -200,6 +204,14 @@ const AddModifyStock: React.FC<AddModifyStockProps> = ({ open, setOpen }) => {
                 >
                   GENERATE BARCODE
                 </Button>
+                <TextField
+                  label="Search by Item Name"
+                  variant="outlined"
+                  size="small"
+                  value={searchQuery}
+                  onChange={handleSearch}
+                  sx={{ width: 300 }}
+                />
               </Stack>
             </div>
             <div className="deleteMailBtnCont">
@@ -207,7 +219,6 @@ const AddModifyStock: React.FC<AddModifyStockProps> = ({ open, setOpen }) => {
                 <Button
                   variant="contained"
                   size="small"
-                  onClick={() => setOpen(true)} // Open dialog on click
                   sx={{
                     backgroundColor: "#f89727",
                     color: "white",
@@ -235,16 +246,16 @@ const AddModifyStock: React.FC<AddModifyStockProps> = ({ open, setOpen }) => {
             </div>
           </div>
           <DataGrid
-            rows={itemInStock} // Use the items data
+            rows={filteredItems} // Use the filtered items
             columns={columns}
             checkboxSelection
             disableRowSelectionOnClick
             sx={{
               "& .MuiDataGrid-cell": {
-                fontSize: "12px", // Reduce cell font size
+                fontSize: "12px",
               },
               "& .MuiDataGrid-columnHeader": {
-                fontSize: "13px", // Reduce column header font size
+                fontSize: "13px",
                 fontWeight: "bold",
               },
               "& .MuiDataGrid-columnHeaderTitle": {
@@ -254,7 +265,7 @@ const AddModifyStock: React.FC<AddModifyStockProps> = ({ open, setOpen }) => {
           />
         </div>
       )}
-    </Dialog>
+    </div>
   );
 };
 

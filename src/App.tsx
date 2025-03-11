@@ -13,6 +13,8 @@ import Stock from "./components/stock/Stock";
 import Suppliers from "./components/suppliers/Suppliers";
 import Office from "./components/office/Office";
 import Employee from "./components/employee/Employee";
+import AddModifyStock from "./components/stock/AddModifyStock";
+import PointOfSaleScreen from "./components/pos/Pos";
 
 function App() {
   const Layout = () => {
@@ -39,7 +41,7 @@ function App() {
       children: [
         {
           path: "/",
-          element: <Home />,
+          element: <PointOfSaleScreen />,
         },
         {
           path: "/users",
@@ -72,6 +74,10 @@ function App() {
         {
           path: "/office/employee",
           element: <Employee />,
+        },
+        {
+          path:"/stock/add-modify-stock",
+          element:<AddModifyStock/>
         },
       ],
     },

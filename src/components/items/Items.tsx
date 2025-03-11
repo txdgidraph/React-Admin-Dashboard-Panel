@@ -1,13 +1,29 @@
 import { DataGrid } from "@mui/x-data-grid";
 import { itemInStock } from "../../data";
 import { GridRenderCellParams } from "@mui/x-data-grid";
-import { Button, Stack } from "@mui/material";
+import { Button, Stack, TextField } from "@mui/material";
 import { useState } from "react";
-import AddNewItem from "../add_new_item/AddNewItem";
+import AddNewItem from "./AddNewItem";
 import { Link } from "react-router-dom";
 
 const Items = () => {
   const [open, setOpen] = useState(false);
+  const [searchQuery, setSearchQuery] = useState("");
+  const [filteredItems, setFilteredItems] = useState(itemInStock);
+
+  // Function to handle search input
+  const handleSearch = (event) => {
+    const query = event.target.value.toLowerCase();
+    setSearchQuery(query);
+
+    // Filter items based on the search query
+    const filtered = itemInStock.filter((item) =>
+      item.itemName.toLowerCase().includes(query)
+    );
+
+    setFilteredItems(filtered);
+  };
+
   const columns = [
     { field: "id", headerName: "ID", width: 50 },
     { field: "barcode", headerName: "Barcode", width: 100 },
@@ -37,7 +53,6 @@ const Items = () => {
             width: "100%",
             alignItems: "center", // Center vertically
             justifyContent: "center", // Center horizontally
-
           }}
         >
           <img
@@ -85,6 +100,15 @@ const Items = () => {
             >
               GENERATE BARCODE
             </Button>
+
+            <TextField
+              label="Search by Item Name"
+              variant="outlined"
+              size="small"
+              value={searchQuery}
+              onChange={handleSearch}
+              sx={{ width: 300 }}
+            />
           </Stack>
         </div>
         <div className="deleteMailBtnCont">
@@ -124,16 +148,16 @@ const Items = () => {
       <div style={{ maxWidth: "100%", overflow: "auto", padding: "1em" }}>
         <div style={{ height: "500px" }}>
           <DataGrid
-            rows={itemInStock} // Use the items data
+            rows={filteredItems} // Use the filtered items
             columns={columns}
             checkboxSelection
             disableRowSelectionOnClick
             sx={{
               "& .MuiDataGrid-cell": {
-                fontSize: "12px", // Reduce cell font size
+                fontSize: "12px",
               },
               "& .MuiDataGrid-columnHeader": {
-                fontSize: "13px", // Reduce column header font size
+                fontSize: "13px",
                 fontWeight: "bold",
               },
               "& .MuiDataGrid-columnHeaderTitle": {

@@ -1,21 +1,20 @@
-import { useState } from "react";
 import "./stock.scss";
-import { Link } from "react-router-dom";
-import AddModifyStock from "../stock_settings/add_modify_stock/Add_modify_stock";
+import { Link, useNavigate } from "react-router-dom";
+
 const Stock = () => {
-  const [open, setOpen] = useState(false)
-  
+
+  const navigate = useNavigate();
+
   return (
     <div>
       <div className="stockContainer">
         <div className="stockMenuCont">
           <span className="stockMenuTitle">STOCK MENU</span>
           <div className="menuItemsCont">
-          <Link to="" className="items" onClick={() => setOpen(true)}>
+          <Link to="" className="items" onClick={() => navigate("/stock/add-modify-stock")}>
               <img src="/images/stock.png" alt="" className="itemIcon" />
               <span>ADD / MODIFY STOCK</span>
             </Link>
-            <AddModifyStock open={open} setOpen={setOpen} />
             <Link to="" className="items">
               <img src="/images/stock.png" alt="" className="itemIcon" />
               <span>STOCK GROUPS MAINTENANCE</span>
