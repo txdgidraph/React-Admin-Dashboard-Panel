@@ -141,6 +141,7 @@ export const navBarMenuItems = [
 export const existingCustomers = [
   {
     id: 1,
+    idNumber: 34227510,
     lastName: "Mwangi",
     firstName: "James",
     email: "james.mwangi@example.com",
@@ -150,6 +151,7 @@ export const existingCustomers = [
   },
   {
     id: 2,
+    idNumber: 45789234,
     lastName: "Achieng",
     firstName: "Grace",
     email: "grace.achieng@example.com",
@@ -159,6 +161,7 @@ export const existingCustomers = [
   },
   {
     id: 3,
+    idNumber: 56341278,
     lastName: "Kamau",
     firstName: "Peter",
     email: "peter.kamau@example.com",
@@ -168,6 +171,7 @@ export const existingCustomers = [
   },
   {
     id: 4,
+    idNumber: 67892345,
     lastName: "Otieno",
     firstName: "John",
     email: "john.otieno@example.com",
@@ -177,6 +181,7 @@ export const existingCustomers = [
   },
   {
     id: 5,
+    idNumber: 78965412,
     lastName: "Wambui",
     firstName: "Mary",
     email: "mary.wambui@example.com",
@@ -186,6 +191,7 @@ export const existingCustomers = [
   },
   {
     id: 6,
+    idNumber: 89456123,
     lastName: "Kariuki",
     firstName: "Samuel",
     email: "samuel.kariuki@example.com",
@@ -195,6 +201,7 @@ export const existingCustomers = [
   },
   {
     id: 7,
+    idNumber: 90234567,
     lastName: "Njeri",
     firstName: "Lucy",
     email: "lucy.njeri@example.com",
@@ -204,6 +211,7 @@ export const existingCustomers = [
   },
   {
     id: 8,
+    idNumber: 34567890,
     lastName: "Mutua",
     firstName: "Kevin",
     email: "kevin.mutua@example.com",
@@ -213,6 +221,7 @@ export const existingCustomers = [
   },
   {
     id: 9,
+    idNumber: 67890123,
     lastName: "Wafula",
     firstName: "Daniel",
     email: "daniel.wafula@example.com",
@@ -225,6 +234,7 @@ export const existingCustomers = [
   },
   {
     id: 10,
+    idNumber: 78901234,
     lastName: "Chebet",
     firstName: "Ann",
     email: "ann.chebet@example.com",
@@ -236,6 +246,7 @@ export const existingCustomers = [
     customerSettings: "/images/edit_icon.png",
   },
 ];
+
 
 export const itemInStock = [
   {

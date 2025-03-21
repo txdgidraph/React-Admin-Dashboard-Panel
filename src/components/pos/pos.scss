@@ -1,0 +1,24 @@
+.pos_add_payment{
+    display: flex;
+    background-color: #7FB743;
+    color: white;
+    padding: 0.5em;
+    gap: 10px;
+    width: 150px;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #7FB743;
+    &:hover{
+        cursor: pointer;
+        border: 1px solid #555;
+    }
+
+    img{
+        width: 20px;
+        height: auto;
+    }
+
+    span{
+        font-size: 12px;
+    }
+}
