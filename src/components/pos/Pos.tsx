@@ -16,6 +16,7 @@ import {
 } from "@mui/material";
 import { itemInStock } from "../../data";
 import { existingCustomers } from "../../data";
+import { Link } from "react-router-dom";
 const sampleItems = itemInStock.map(
   ({ id, barcode, itemName, RetailPrice, avatar }) => ({
     id,
@@ -72,39 +73,44 @@ const SearchCustomer = () => {
 
 const SelectPaymentType = () => {
   const [age, setAge] = useState("");
-
   const handleChange = (event: SelectChangeEvent) => {
     setAge(event.target.value as string);
   };
 
   return (
     <Box sx={{ minWidth: 120 }}>
-  <FormControl fullWidth size="small">
-    <InputLabel id="demo-simple-select-label">Type</InputLabel>
-    <Select
-      labelId="demo-simple-select-label"
-      id="demo-simple-select"
-      value={age}
-      label="Type"
-      onChange={handleChange}
-      sx={{
-        height: 35, // Adjust height
-        fontSize: "0.850rem", // Optional: Reduce font size
-      }}
-    >
-      <MenuItem value={10}>Cash</MenuItem>
-      <MenuItem value={50}>Mpesa</MenuItem>
-      <MenuItem value={20}>Debit Card</MenuItem>
-      <MenuItem value={30}>Credit Card</MenuItem>
-      <MenuItem value={40}>Cheque</MenuItem>
-    </Select>
-  </FormControl>
-</Box>
+      <FormControl fullWidth size="small">
+        <InputLabel id="demo-simple-select-label">Type</InputLabel>
+        <Select
+          labelId="demo-simple-select-label"
+          id="demo-simple-select"
+          value={age}
+          label="Type"
+          onChange={handleChange}
+          sx={{
+            height: 35, // Adjust height
+            fontSize: "0.850rem", // Optional: Reduce font size
+          }}
+        >
+          <MenuItem value={10}>Cash</MenuItem>
+          <MenuItem value={50}>Mpesa</MenuItem>
+          <MenuItem value={20}>Debit Card</MenuItem>
+          <MenuItem value={30}>Credit Card</MenuItem>
+          <MenuItem value={40}>Cheque</MenuItem>
+        </Select>
+      </FormControl>
+    </Box>
   );
 };
 
 const PointOfSaleScreen = () => {
   const [cart, setCart] = useState(sampleItems);
+  const [amountTendered, setAmountTendered] = useState("");
+  const [showBalance, setShowBalance] = useState(false);
+console.log(showBalance)
+  const handleAmountChange = (event) => {
+    setAmountTendered(event.target.value);
+  };
 
   // Function to update quantity and discount
   const handleEditCell = (id: number, field: string, value: number) => {
@@ -128,7 +134,7 @@ const PointOfSaleScreen = () => {
   const discountTotal = cart.reduce((acc, item) => acc + item.discount, 0);
   const tax = subtotal * 0.16; // 16% tax
   const total = subtotal + tax - discountTotal;
-
+  const balance = (Number(amountTendered) - total).toFixed(2);
   // DataGrid columns
   const columns = [
     {
@@ -258,7 +264,7 @@ const PointOfSaleScreen = () => {
           </Typography>
           <Typography variant="body2">
             Tax (16%): Ksh{tax.toFixed(2)}
-          </Typography>
+          </Typographyy>
           <Typography
             variant="h6"
             sx={{ fontWeight: "bold", marginTop: "10px" }}
@@ -266,9 +272,11 @@ const PointOfSaleScreen = () => {
             Total: Ksh{total.toFixed(2)}
           </Typography>
           <Typography variant="body2">Payments Total: Ksh0.00</Typography>
-          <Typography variant="h6" sx={{ fontWeight:"bold" }}>
-            Amount Due: Ksh {total.toFixed(2)}
-          </Typography>
+         {showBalance && (
+          <Typography variant="h6" sx={{ fontWeight: "bold" }}>
+            Balance: Ksh {balance}
+          </Typography>)
+}
           <div style={{ display: "flex", flexDirection: "column" }}>
             <div
               style={{
@@ -277,7 +285,7 @@ const PointOfSaleScreen = () => {
                 justifyContent: "space-between",
                 gap: "5px",
                 borderTop: "1px solid grey",
-                paddingTop:"1em"
+                paddingTop: "1em",
               }}
             >
               <Typography variant="body2">Select Payment Type: </Typography>
@@ -289,25 +297,27 @@ const PointOfSaleScreen = () => {
                 alignItems: "center",
                 gap: "10px",
                 justifyContent: "space-between",
-                marginTop:"1em",
-                marginBottom:"1em"
+                marginTop: "1em",
+                marginBottom: "1em",
               }}
             >
               <Typography variant="body2">Amount Tendered:</Typography>
               <input
                 type="number"
                 placeholder="Enter amount"
+                value={amountTendered} // Bind value to state
+                onChange={handleAmountChange} // Handle changes
                 style={{ padding: "5px", width: "100px" }}
               />
             </div>
-            <div className="pos_add_payment">
+            <Link to="" className="pos_add_payment" onClick={()=>setShowBalance(true)}>
               <img
                 src="/images/credit-card.png"
                 alt=""
                 className="pos_credit_card"
               />
               <Typography variant="body2">Add Payment</Typography>
-            </div>
+            </Link>
           </div>
         </Paper>
       </div>
